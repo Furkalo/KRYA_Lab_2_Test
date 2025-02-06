@@ -1,20 +1,14 @@
 import pygame
 
 class SoundManager:
-    """
-    A class to manage sound effects in a game using Pygame's mixer module.
 
-    This class initializes the sound system, loads sound files, and provides
-    methods to play specific sound effects.
-    """
     def __init__(self):
-        """Initialize the sound manager and load sounds."""
         pygame.mixer.init()
         self.sounds = {}
         self.load_sounds()
 
     def load_sounds(self):
-        """Load sound effects from the specified file paths."""
+
         sound_files = {
             'monster': 'assets/sounds/Small monster.wav',
             'plate': 'assets/sounds/Small monster.wav',
@@ -32,6 +26,5 @@ class SoundManager:
                 print(f"Error loading sound {path}: {e}")  # Print error if loading fails
 
     def play_sound(self, name):
-        """Play a specific sound effect if it exists."""
         if name in self.sounds:
             self.sounds[name].play()
