@@ -3,7 +3,6 @@ from unittest.mock import patch, MagicMock
 
 from BackEnd.ResourceManager import ResourceManager
 
-
 class TestResourceManager(unittest.TestCase):
 
     @patch("pygame.image.load")
