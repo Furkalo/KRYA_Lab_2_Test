@@ -18,7 +18,7 @@ class test_ShootingGallery(unittest.TestCase):
         self.mock_score_manager = MagicMock(spec=ScoreManager)
         self.mock_gun = MagicMock(spec=Gun)
 
-        # Setup return values for mocked methods
+        # Setu return values for mocked methods
         self.mock_resource_manager.load_image.return_value = pygame.Surface((1, 1))
         self.mock_score_manager.update_best_scores.return_value = False
 
