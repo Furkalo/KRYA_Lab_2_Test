@@ -13,7 +13,7 @@ import os
 class test_ShootingGallery(unittest.TestCase):
     def setUp(self):
         pygame.init()
-        pygame.mixer.init()
+        pygame.mixer.quit()
         os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
         # Mock necessary dependencies
