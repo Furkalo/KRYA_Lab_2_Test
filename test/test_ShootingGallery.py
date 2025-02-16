@@ -22,8 +22,8 @@ class test_ShootingGallery(unittest.TestCase):
         self.mock_resource_manager.load_image.return_value = pygame.Surface((1, 1))
         self.mock_score_manager.update_best_scores.return_value = False
 
-        # Patch pygame.mixer.Sound to prevent file loading
-        with patch("pygame.mixer.Sound", return_value=MagicMock()):
+        # Patch pygame.mixer to prevent any sound-related errors
+        with patch("pygame.mixer.init"), patch("pygame.mixer.quit"), patch("pygame.mixer.Sound", return_value=MagicMock()):
             self.game = ShootingGallery()
 
         # Replace managers with mocks
