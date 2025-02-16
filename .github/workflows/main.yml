@@ -39,13 +39,13 @@ jobs:
           pytest --html=reports/pytest/report.html --self-contained-html
 
       - name: Upload Linting Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: flake8-report
           path: reports/flake8
 
       - name: Upload Test Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pytest-report
           path: reports/pytest
