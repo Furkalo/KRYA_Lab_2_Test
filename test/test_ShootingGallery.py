@@ -9,7 +9,7 @@ from BackEnd.ShootingGallery import ShootingGallery
 import os
 
 
-class TestShootingGallery(unittest.TestCase):
+class test_ShootingGallery(unittest.TestCase):
     def setUp(self):
         pygame.init()
         pygame.mixer.init()
