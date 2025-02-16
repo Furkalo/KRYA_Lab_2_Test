@@ -4,7 +4,7 @@ from unittest.mock import patch, mock_open, MagicMock
 from BackEnd.ScoreManager import ScoreManager
 
 
-class TestScoreManager(unittest.TestCase):
+class test_ScoreManager(unittest.TestCase):
 
     @patch("builtins.open", new_callable=mock_open, read_data="100\n200\n300\n")
     def test_load_best_scores(self, mock_file):
