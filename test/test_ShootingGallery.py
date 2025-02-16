@@ -1,4 +1,5 @@
 import unittest
+import pytest
 import pygame
 from unittest.mock import MagicMock, patch
 from BackEnd.Gun import Gun
@@ -191,4 +192,4 @@ class test_ShootingGallery(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    pytest.main(['-v'])
