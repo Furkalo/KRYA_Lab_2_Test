@@ -1,5 +1,4 @@
 import unittest
-import pytest
 import pygame
 from unittest.mock import MagicMock, patch
 from BackEnd.Gun import Gun
@@ -10,10 +9,10 @@ from BackEnd.ShootingGallery import ShootingGallery
 import os
 
 
-class test_ShootingGallery(unittest.TestCase):
+class TestShootingGallery(unittest.TestCase):
     def setUp(self):
         pygame.init()
-        pygame.mixer.quit()
+        pygame.mixer.init()
         os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
         # Mock necessary dependencies
@@ -55,8 +54,7 @@ class test_ShootingGallery(unittest.TestCase):
         self.assertFalse(self.game.game_over)
         self.assertEqual(self.game.fps, 60)
 
-    @patch("pygame.mixer.Sound", return_value=MagicMock())
-    def test_mode_select_free_play(self, mock_sound):
+    def test_mode_select_free_play(self):
         """Test free play mode selection"""
         self.game.mode_select(0)
         self.assertEqual(self.game.mode, 0)
@@ -65,8 +63,7 @@ class test_ShootingGallery(unittest.TestCase):
         self.assertEqual(self.game.ammo, 0)
         self.assertEqual(self.game.time_remaining, 0)
 
-    @patch("pygame.mixer.Sound", return_value=MagicMock())
-    def test_mode_select_ammo_mode(self, mock_sound):
+    def test_mode_select_ammo_mode(self):
         """Test ammo mode selection"""
         self.game.mode_select(1)
         self.assertEqual(self.game.mode, 1)
@@ -74,8 +71,7 @@ class test_ShootingGallery(unittest.TestCase):
         self.assertFalse(self.game.menu)
         self.assertEqual(self.game.ammo, 81)
 
-    @patch("pygame.mixer.Sound", return_value=MagicMock())
-    def test_mode_select_timed_mode(self, mock_sound):
+    def test_mode_select_timed_mode(self):
         """Test timed mode selection"""
         self.game.mode_select(2)
         self.assertEqual(self.game.mode, 2)
@@ -192,4 +188,4 @@ class test_ShootingGallery(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    pytest.main(['-v'])
+    unittest.main()
