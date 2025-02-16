@@ -13,7 +13,7 @@ def setup_gun():
     return gun, width, height
 
 def test_calculate_rotation(setup_gun):
-    """Tests the correct calculation of the rotation angle of the gun."""
+    """Tests the correct calculation of the rotation angle of the gun"""
     gun, width, height = setup_gun
     mouse_pos = (width // 2 + 1, height - 250)  # Slight shift to the right to avoid division by 0
     angle = gun.calculate_rotation(mouse_pos)
