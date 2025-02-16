@@ -4,7 +4,7 @@ from BackEnd.Gun import Gun  # Assuming your Gun class is in the gun.py file
 
 @pytest.fixture
 def setup_gun():
-    """Fixture to set up the Gun object and related properties."""
+    """Fixture to set up the Gun object and related properties. ojidfdkfjdkfjdkjf"""
     pygame.init()
     width = 800
     height = 600
