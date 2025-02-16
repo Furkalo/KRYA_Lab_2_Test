@@ -1,6 +1,13 @@
 import pytest
 import pygame
-from BackEnd.Gun import Gun  # Assuming your Gun class is in the gun.py file
+
+import sys
+import os
+
+from BackEnd.Gun import Gun
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'BackEnd')))
+
 
 @pytest.fixture
 def setup_gun():
@@ -37,3 +44,4 @@ def test_draw(setup_gun):
 
 if __name__ == "__main__":
     pytest.main()
+    print(sys.path)
